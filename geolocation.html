@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>
+            geolocation
+        </title>
+        <script>
+            function showPosition(){
+                if(navigator.geolocation){
+                    navigator.geolocation.getCurrentPosition(function(position){
+                        var positioninfo="your current position ("+"latitude  :"+position.coords.latitude+" ,"+"longitude :"+position.coords.longitude +" ,"+"accuracy :"+position.coords.accuracy+" ,"+"speed :"+position.coords.speed +")";
+                        document.getElementById("result").innerHTML=positioninfo;
+                    });
+                }else{
+                    alert("sorry,ur browser does not support html5 geolocation");
+                }
+
+                }
+        </script>
+    </head>
+    <body>
+        <div id="result">
+
+        </div>
+<button type="button" onclick="showPosition()"> showPosition</button>
+    </body>
+</html>
